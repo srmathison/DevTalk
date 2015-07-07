@@ -1,0 +1,20 @@
+
+<%= form_for @user do |f| %>   
+
+  <%=f.label :fname %>   
+  <%=f.text_field :fname, nil %>   
+
+  <%=f.label :email %>   
+  <%=f.text_field :email, nil %>   
+
+  <%=f.label :username %>   
+  <%=f.text_field :username, nil %>   
+
+  <%=f.label :password %>   
+  <%=f.text_field :password, nil %>   
+
+  <%=f.label :about %>   
+  <%=f.text_field :about, nil, placeholder: "Are you a beginer, Junior or Senior Developer?" %>   
+
+  <%=f.submit :sign_up %> 
+<% end %>
