@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
 
+  def new
+    @user = User.new
+  end
+
+
   def destroy
       session[:user_id] = nil
       flash[:alert]  = "susscessfully logged out"
@@ -27,7 +32,7 @@ class SessionsController < ApplicationController
       else
         # success password case
         if @user.password == password
-          session[:user_id] = @user.user_id
+          session[:user_id] = @user.id
           flash[:alert] = "Welcome!"
           redirect_to root_path
 
@@ -38,5 +43,5 @@ class SessionsController < ApplicationController
       end
     end
   end
-  
+
 end
