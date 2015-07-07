@@ -1,7 +1,39 @@
 Rails.application.routes.draw do
+  
+  root 'users#index'
+
   resources :comments
   resources :posts
   resources :users
+  resources :session
+
+  delete '/logout' => 'sessions#destroy'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
