@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <h2> <%= post.posttitle %> </h2>
+  <p> <%= post.postbody %> </p>
+
+  <p> <%= link_to post.user.fname, user_path(post.user.id) %> </p>
+
+<% end %> 
