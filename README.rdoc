@@ -1,1 +1,19 @@
 
+ <div id="video-background">
+  <%= video_tag '("empty_theater_stage.mp4", controls: false, autoplay: true, preload: auto)' %>
+</div> 
+
+
+
+<video id = "video-background" preload = "auto" autoplay = "true" loop = "loop">
+      
+      <source type="video/webm" src="/assets/empty_theater_stage.webm" />
+     
+      <source type="video/mp4" src="/assets/empty_theater_stage.mp4" />
+
+  </video> 
+
+
+
+
+  

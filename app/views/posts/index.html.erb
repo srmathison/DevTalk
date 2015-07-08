@@ -1,3 +1,4 @@
+<!-- index to show all posts -->
 <% @posts.each do |post| %>
   <h2> <%= post.posttitle %> </h2>
   <p> <%= post.postbody %> </p>
@@ -5,3 +6,11 @@
   <p> <%= link_to post.user.fname, user_path(post.user.id) %> </p>
 
 <% end %> 
+
+
+
+<% if current_user %>
+  <% link_to "Create NEW Post", new_post_path %>
+<% end %>
+
+  <%=render @posts %>
