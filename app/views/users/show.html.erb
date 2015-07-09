@@ -1,0 +1,12 @@
+<h1>Hello <%= @user.username %></h1>
+<br>
+
+<% current_user.posts.reverse.each do |p| %>
+   <div id="my_posts">
+     <h3><%= p.posttitle %></h3>
+     <p><%= p.postbody %></p>
+     <% if p.user_id == current_user.id %>
+       <p><%= link_to("Delete Post", p, method: :delete) %></p>
+     <% end %>
+   </div>
+ <% end %>
