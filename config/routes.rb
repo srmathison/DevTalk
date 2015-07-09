@@ -7,30 +7,12 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+
   delete '/logout' => 'sessions#destroy'
 
+  get '/profile' => 'users#show'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  get '/posts' => 'posts#show'
 
 
 

@@ -1,20 +1,30 @@
 
 <!-- this is the post itself -->
-<%= render @post %>
+<article class="post">
+    <h2>
+      <%= link_to post.posttitle, post_path(post) %>
+    </h2>
+
+    <p class='post-body'>
+      <% if local_assigns.fetch(:truncate_post, false) %>
+      <%= truncate post.postbody, length: 200 %>
+      <% else %>
+      <%= post.postbody %>
+      <% end %>
+    </p>
+
+    <p class='post-attribution' >
+      Posted by <%= post.user.username %>
+      at <%= post.created_at %>
+    </p>
+
+</article>
 
 <!-- here is a comment for that post -->
-<%= form_for Comment.new do |f| %>
-  <%= f.text_area :postbody %>
-  <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.submit :submit %>
-<% end %>
+
 
 <!-- this is to list all the comments for that post -->
-<% @post.comments.each do |comment| %>
-<p>
-  <%= comment.body %>
-</p>
-<% end %>
+
 
 
 

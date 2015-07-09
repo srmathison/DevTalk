@@ -1,18 +1,24 @@
+
 <article class="post">
-  <h2>
-    <%= link_to post.posttitle, post_path(post) %>
-  </h2>
+    <h2>
+      <%= link_to post.posttitle, post_path(post) %>
+    </h2>
 
-  <p class='post-body'>
-    <% if local_assigns.fetch(:truncate_post, false) %>
-    <%= truncate post.postbody, length: 200 %>
-    <% else %>
-    <%= pot.postbody %>
-    <% end %>
-  </p>
+    <p class='post-body'>
+      <% if local_assigns.fetch(:truncate_post, false) %>
+      <%= truncate post.postbody, length: 200 %>
+      <% else %>
+      <%= post.postbody %>
+      <% end %>
+    </p>
 
-  <p class='post-attribution' >
-    Posted by <%= post.user.username %>
-    at <%= post.created_at %>
-  </p>
+    <p class='post-attribution' >
+      Posted by <%= post.user.username %>
+      at <%= post.created_at %>
+    </p>
+
 </article>
+
+
+
+

@@ -16,6 +16,7 @@
   <!-- if session shows anything because it has a user linked by user_id -->
   <% if current_user %>
     <%= link_to "sign out", '/logout', method: :delete %>
+
     
     <!-- if nothing in session user_id show login form -->
     <% else %>
@@ -31,7 +32,11 @@
 
 
 <!-- if there is a flash alert going to show this is where it is styled -->
-  
+  <% if flash[:alert] %>
+  <div style="background: yellow;">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
 
 </header>
 
