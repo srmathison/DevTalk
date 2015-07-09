@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DevTalk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link href="http://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  
+  <!-- if session shows anything because it has a user linked by user_id -->
+  <% if current_user %>
+    <%= link_to "sign out", '/logout', method: :delete %>
+    
+    <!-- if nothing in session user_id show login form -->
+    <% else %>
+    <%= form_tag '/sessions' do %>
+    <!-- ruby method   :argument1, arg2, hash with key: "value" -->
+    <%= text_field_tag :username, nil, placeholder: "username" %>
+    <%= password_field_tag :password, nil, placeholder: "password" %>
+    <%= submit_tag "log in" %>
+    <% end %>
+  <% end %>
+
+<!-- if there is a flash alert going to show this is where it is styled -->
+  <% if flash[:alert] %>
+      <div style="background: yellow;">
+        <%= flash[:alert] %>
+      </div>
+  <% end %>
+
+</header>
+
+<%= yield %>
+
+</body>
+</html>
+
+
+
+
+
+
+
