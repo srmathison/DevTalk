@@ -1,3 +1,39 @@
-// Place all the styles related to the Users controller here.
+/*// Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You*/ /*can use Sass (SCSS) here: http://sass-lang.com/*/
+
+html,body {
+  background: black;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 4.5em;
+  color: white;
+  font-weight: 200;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: white;
+  font-size: 1.4em;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: white;
+  font-size: 1.0em;
+}
+
+a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: orange;
+  font-size: .75em;
+  text-decoration: none;
+}
+
+
+

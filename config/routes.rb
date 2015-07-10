@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   
   root 'home#index'
 
+  
+  resources :posts 
   resources :comments
-  resources :posts
+  
   resources :users
   resources :sessions
 

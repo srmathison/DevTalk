@@ -16,6 +16,7 @@
   <!-- if session shows anything because it has a user linked by user_id -->
   <% if current_user %>
     <%= link_to "sign out", '/logout', method: :delete %>
+    <%= link_to "profile", '/profile' %>
 
     
     <!-- if nothing in session user_id show login form -->
