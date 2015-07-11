@@ -3,7 +3,7 @@
   <br>
 </div>
 
-
+<div class="post_container">
 <% current_user.posts.reverse.each do |p| %>
    <div id="my_posts">
      <h3><%= p.posttitle %></h3>
@@ -13,5 +13,5 @@
      <% end %>
    </div>
  <% end %>
+</div>
 
- 
