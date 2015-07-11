@@ -1,12 +1,17 @@
 
+<div class="feedtitle_container">
+  <h1>DevTalk Feed</h1>
+  <br>
+</div>
 <!-- index to show all posts -->
+<div class="post_container">
+ <div id="feed_posts"> 
 
-<% if current_user %>
-  <% link_to "Create NEW Post", new_post_path %>
-  <% end %>
 <!-- this is listing all posts in descending order -->
+
 <% @posts.order(created_at: :desc).each do |post| %>
   <!-- links individual post/posttitle to post path -->
+
     <h2>
       <%= link_to post.posttitle, post_path(post) %>
     </h2>
@@ -23,7 +28,7 @@
 
   <!-- here is a comment for that post -->
   <%=form_for Comment.new do |f| %>
-    <%= f.text_area :commentbody %>
+    <%= f.text_area :commentbody, :placeholder => "Comment on this post" %>
     <%= f.hidden_field :post_id, value: post.id %>
     <%= f.submit :submit %>
   <% end %>
@@ -32,10 +37,11 @@
   <!-- this is to list all the comments for that post -->
   <% post.comments.each do |comment| %>
   <p> <%= comment.commentbody %> </p>
-  <p> <%= comment.user.username%> </p>
+  <p> Commented by <%= comment.user.username%> at <%= comment.created_at %></p>
   <% end %>
 
-
 <% end %>
+</div>
+</div>
 
 
