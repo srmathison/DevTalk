@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -15,6 +16,8 @@
   <!-- if session shows anything because it has a user linked by user_id -->
   <% if current_user %>
     <%= link_to "sign out", '/logout', method: :delete %>
+    <%= link_to "profile", '/profile' %>
+
     
     <!-- if nothing in session user_id show login form -->
     <% else %>
@@ -24,13 +27,16 @@
     <%= password_field_tag :password, nil, placeholder: "password" %>
     <%= submit_tag "log in" %>
     <% end %>
+    <%= link_to "sign up", '/users/new' %>
+
   <% end %>
+
 
 <!-- if there is a flash alert going to show this is where it is styled -->
   <% if flash[:alert] %>
-      <div style="background: yellow;">
-        <%= flash[:alert] %>
-      </div>
+  <div style="background: yellow;">
+    <%= flash[:alert] %>
+  </div>
   <% end %>
 
 </header>

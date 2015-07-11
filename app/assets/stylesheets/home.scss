@@ -1,6 +1,6 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ /*Place all the styles related to the Home controller here.*/
+ /*They will automatically be included in application.css.*/
+ /*You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 body {
   margin: 0;
@@ -31,16 +31,25 @@ background: url(polina.jpg) no-repeat;
 background-size: cover;
 }
 
-h1 {
+ #text {
   position: absolute;
-  top: 20%;
+  top: 38%;
   width: 100%;
   font-size: 70px;
   letter-spacing: 3px;
   color: #fff;
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   text-align: center;
+  margin-left: -5%;
 }
+
+
+
+
+
+
+
 
 /*article {
 /*  just a fancy border  */

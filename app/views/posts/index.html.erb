@@ -1,16 +1,41 @@
+
 <!-- index to show all posts -->
-<% @posts.each do |post| %>
-  <h2> <%= post.posttitle %> </h2>
-  <p> <%= post.postbody %> </p>
-
-  <p> <%= link_to post.user.fname, user_path(post.user.id) %> </p>
-
-<% end %> 
-
-
 
 <% if current_user %>
   <% link_to "Create NEW Post", new_post_path %>
+  <% end %>
+<!-- this is listing all posts in descending order -->
+<% @posts.order(created_at: :desc).each do |post| %>
+  <!-- links individual post/posttitle to post path -->
+    <h2>
+      <%= link_to post.posttitle, post_path(post) %>
+    </h2>
+    
+<!-- outputs the postbody of individual posts -->
+    <p class='post-body'>
+      <%= post.postbody %>
+    </p>
+<!-- outputs the user who posted to their post -->
+    <p class='post-attribution' >
+      Posted by <%= post.user.username %>
+      at <%= post.created_at %>
+    </p>
+
+  <!-- here is a comment for that post -->
+  <%=form_for Comment.new do |f| %>
+    <%= f.text_area :commentbody %>
+    <%= f.hidden_field :post_id, value: post.id %>
+    <%= f.submit :submit %>
+  <% end %>
+
+
+  <!-- this is to list all the comments for that post -->
+  <% post.comments.each do |comment| %>
+  <p> <%= comment.commentbody %> </p>
+  <p> <%= comment.user.username%> </p>
+  <% end %>
+
+
 <% end %>
 
-  <%=render @posts %>
+
