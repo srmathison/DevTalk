@@ -17,6 +17,9 @@
   <% if current_user %>
     <%= link_to "sign out", '/logout', method: :delete %>
     <%= link_to "profile", '/profile' %>
+    <%= link_to "feed", '/posts' %>
+    <%= link_to "create post", '/posts/new' %>
+
 
     
     <!-- if nothing in session user_id show login form -->
