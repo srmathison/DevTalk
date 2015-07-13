@@ -1,5 +1,8 @@
-<div class="compose_post"
-<h1> Compose post </h2>
+<div class="composetitle_container">
+<h1> Compose post </h1>
+</div>
+<div class="post_container">
+  <div id="compose_posts">
   <%= form_for @post do |f| %>
   <%= f.label :posttitle %><br>
   <%= f.text_field :posttitle %><br>
@@ -7,6 +10,6 @@
   <%= f.text_area :postbody %><br>
   <%= f.submit "Publish" %>
   <% end %>
-  
+  </div>
 </div>
 

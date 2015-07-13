@@ -1,4 +1,6 @@
+
 <article class="post">
+  <div id="feed_posts">
     <h2>
       <%= link_to post.posttitle, post_path(post) %>
     </h2>
@@ -15,7 +17,7 @@
       Posted by <%= post.user.username %>
       at <%= post.created_at %>
     </p>
-
+</div>
 </article>
 
 

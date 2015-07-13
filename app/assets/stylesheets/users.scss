@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You*/ /*can use Sass (SCSS) here: http://sass-lang.com/*/
 
-html,body {
-  background: black;
-}
-
 h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 4.5em;
@@ -15,38 +11,42 @@ h1 {
 
 h3 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  color: white;
+  font-weight: 1000;
+  color: black;
   font-size: 1.4em;
 }
 
 p {
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  color: white;
+  font-weight: 700;
+  color: black;
   font-size: 1.0em;
 }
 
 a {
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
+  font-weight: 500;
   color: orange;
   font-size: .75em;
   text-decoration: none;
 }
-.username_container {
+.username_container, .feedtitle_container, .composetitle_container, .signuptitle_container {
   display: relative;
   top: 7%;
-  width: 100%;
+  width: 75%;
   text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 
-.post_container {
-  display: absolute;
-  width: 56.20em;
+.post_container, .signup_container {
+  display: block;
+  width: 50%;
   margin: 0 auto;
   height: 30em;
   overflow: scroll;
+  border-radius: 25%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #my_posts {
@@ -56,18 +56,27 @@ a {
   height: 9.375em;
   overflow: auto;
   margin: 0 auto;
+  padding-left: 5%;
 }
 
-.compose_post {
-  float: left;
-  position: fixed;
-  width: 12.5em;
+#feed_posts {
+  padding-left: 20%;
+}
+
+#flash_alert {
+  text-align: center;
 }
 
 
+#compose_posts {
+  padding-left: 35%;
+  padding-top: 5%;
+}
 
-
-
+#signup {
+padding-top: 5%;
+padding-left: 30%
+}
 
 
 

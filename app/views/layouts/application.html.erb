@@ -24,6 +24,7 @@
     
     <!-- if nothing in session user_id show login form -->
     <% else %>
+    <div id="login">
     <%= form_tag '/sessions' do %>
     <!-- ruby method   :argument1, arg2, hash with key: "value" -->
     <%= text_field_tag :username, nil, placeholder: "username" %>
@@ -31,13 +32,13 @@
     <%= submit_tag "log in" %>
     <% end %>
     <%= link_to "sign up", '/users/new' %>
-
+</div>
   <% end %>
 
 
 <!-- if there is a flash alert going to show this is where it is styled -->
   <% if flash[:alert] %>
-  <div style="background: yellow;">
+  <div id="flash_alert" style="background: yellow;">
     <%= flash[:alert] %>
   </div>
   <% end %>
