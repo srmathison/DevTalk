@@ -12,8 +12,8 @@
 <% @posts.order(created_at: :desc).each do |post| %>
   <!-- links individual post/posttitle to post path -->
 
-    <h2>
-      <%= link_to post.posttitle, post_path(post) %>
+    <h2 class="post-title">
+      <%= post.posttitle%>
     </h2>
     
 <!-- outputs the postbody of individual posts -->

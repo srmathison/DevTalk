@@ -6,11 +6,8 @@
 <div class="post_container">
 <% current_user.posts.reverse.each do |p| %>
    <div id="my_posts">
-     <h3><%= p.posttitle %></h3>
+     <h3 class="post-title"><%= p.posttitle %></h3>
      <p><%= p.postbody %></p>
-     <% if p.user_id == current_user.id %>
-       <p><%= link_to("Delete Post", p, method: :delete) %></p>
-     <% end %>
    </div>
  <% end %>
 </div>
